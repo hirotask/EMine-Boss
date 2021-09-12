@@ -1,23 +1,58 @@
-plugins {
-    id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+group 'click.erudosaba.mc.emineboss'
+version '1.0-SNAPSHOT'
+
+//ビルドの設定
+buildscript {
+    ext {
+        junit_version = '4.12'
+        kotlin_version = '1.4.32'
+        spigot_version = '1.16.3-R0.1-SNAPSHOT'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        name = "spigot-api"
+        url "https://hub.spigotmc.org/nexus/content/groups/public"
+    }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: junit_version
+    testRuntimeOnly group: 'junit', name: 'junit', version: junit_version
+    compile "org.spigotmc:spigot-api:$spigot_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+import org.apache.tools.ant.filters.ReplaceTokens
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
 }
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+
+jar {
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }

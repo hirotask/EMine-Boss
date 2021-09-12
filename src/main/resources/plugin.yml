@@ -1,0 +1,5 @@
+name: EMine-Boss
+version: @version@
+main: click.erudosaba.mc.emineboss.Main
+api-version: '1.13'
+authors: [erudosan0524-JP,Koryu25]
