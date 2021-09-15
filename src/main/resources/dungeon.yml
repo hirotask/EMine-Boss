@@ -1,0 +1,13 @@
+testdungeon:
+  name: Test Dungeon
+  people: 2
+  isEnable: true
+  portal:
+    loc1:
+      x: 10
+      y: 68
+      z: 10
+    loc2:
+      x: 9
+      y: 65
+      z: 10

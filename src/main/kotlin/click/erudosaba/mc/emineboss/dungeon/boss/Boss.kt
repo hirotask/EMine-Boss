@@ -1,6 +1,6 @@
-package click.erudosaba.mc.emineboss.boss
+package click.erudosaba.mc.emineboss.dungeon.boss
 
-import click.erudosaba.mc.emineboss.dungeon.Dungeon
+import click.erudosaba.mc.emineboss.dungeon.stage.BossStage
 import org.bukkit.Location
 
 open class Boss(
@@ -8,8 +8,7 @@ open class Boss(
     var hp: Int,
     var time: Int,
     var isEnable: Boolean,
-    val dungeon: Dungeon,
-    var firstLocation: Location
+    val stage: BossStage
     ) {
 
     open fun summon() {}

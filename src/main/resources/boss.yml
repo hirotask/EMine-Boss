@@ -1,0 +1,16 @@
+testboss:
+  name: Test Entity Boss
+  hp: 10
+  time: 4000
+  isEnable: true
+  stage: TestStage
+  hand:
+    ItemStack:
+  head:
+    ItemStack:
+  chestplate:
+    ItemStack:
+  leggings:
+    ItemStack:
+  boots:
+    ItemStack:

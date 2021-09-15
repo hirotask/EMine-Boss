@@ -15,7 +15,7 @@ class Hologram(private val portal:Portal) {
         }
 
     init {
-        // この時点でdisplay()するかどうか
+        // TODO 一つのメソッドに処理をまとめたい(display())
         // Locationの計算
         location = middleLocation()
 
@@ -29,6 +29,8 @@ class Hologram(private val portal:Portal) {
         entity.setGravity(false)
         // 無敵化
         entity.isInvulnerable = true
+        // TODO 当たり判定の無効化
+        entity
 
         // NameTagの付与
         entity.customName = portal.dungeon.name

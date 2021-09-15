@@ -1,21 +1,22 @@
-package click.erudosaba.mc.emineboss.boss.blockboss
+package click.erudosaba.mc.emineboss.dungeon.boss
 
-import click.erudosaba.mc.emineboss.boss.Boss
 import click.erudosaba.mc.emineboss.dungeon.Dungeon
+import click.erudosaba.mc.emineboss.dungeon.stage.BossStage
+import click.erudosaba.mc.emineboss.dungeon.stage.Stage
 import org.bukkit.Location
 import org.bukkit.block.Block
+import org.graalvm.compiler.phases.common.NodeCounterPhase
 
 open class BlockBoss(
     name: String,
     hp: Int,
     time: Int,
     isEnable: Boolean,
-    dungeon: Dungeon,
-    firstLocation: Location,
+    stage: BossStage,
     val blockSet: Set<Block>,
     val weaknessBlockSet: Set<Block>,
     val multiplier: Double,
-): Boss(name, hp, time, isEnable, dungeon, firstLocation) {
+    ): Boss(name, hp, time, isEnable, stage) {
 
     open override fun summon() {
         // TODO ブロックの設置
