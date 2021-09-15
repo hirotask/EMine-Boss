@@ -7,7 +7,7 @@ open class Dungeon(
     val name: String,
     val firstLocation: Location,
     val people: Int,
-    val stage: Int,
+    val stages: List<Stage>,
     var isEnable: Boolean
     ) {
 
