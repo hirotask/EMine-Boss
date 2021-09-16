@@ -1,19 +1,15 @@
 package click.erudosaba.mc.emineboss.dungeon
 
-import click.erudosaba.mc.emineboss.dungeon.portal.Portal
-import click.erudosaba.mc.emineboss.dungeon.stage.Stage
+import click.erudosaba.mc.emineboss.boss.Boss
+import click.erudosaba.mc.emineboss.portal.Portal
 import org.bukkit.Location
 
 open class Dungeon(
     val name: String,
     val people: Int,
+    val stageFirstLocations : List<Location>,
+    val maxStage: Int,
     var isEnable: Boolean,
-    portalLocation1: Location,
-    portalLocation2: Location
+    val bosses : List<Boss>
     ) {
-
-    // TODO Portalの座標を取得、生成(保存先はymlでほぼ確定)
-    // TODO Portalの座標の取得方法(Dungeonの引数にするか、ymlマネージャを参照するか)とりあえずDungeonの引数として実装する
-    val portal: Portal = Portal(portalLocation1, portalLocation2, this)
-    val stages: MutableList<Stage> = mutableListOf()
 }

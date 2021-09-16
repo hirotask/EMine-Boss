@@ -1,5 +1,6 @@
-package click.erudosaba.mc.emineboss.dungeon.portal
+package click.erudosaba.mc.emineboss.portal
 
+import click.erudosaba.mc.emineboss.Main
 import org.bukkit.Location
 import org.bukkit.entity.ArmorStand
 import org.bukkit.entity.EntityType

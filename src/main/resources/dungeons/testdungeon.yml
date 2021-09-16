@@ -1,0 +1,17 @@
+name: TestDungeon
+max_people: 2
+isEnabled: true
+stage_firstLocations:
+  - 1,2,3
+  - 4,5,6
+portal:
+  minLoc: 2,2,2
+  maxLoc: 4,0,2
+bosses:
+  testBoss:
+    name: TestBoss
+    hp: 200
+    time: 200
+    isEnabled: true
+    firstLocation: 2,2,2
+    stage: 1
