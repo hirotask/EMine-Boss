@@ -7,13 +7,13 @@ open class BlockBoss(
     name: String,
     hp: Int,
     time: Int,
-    isEnable: Boolean,
+    isEnabled: Boolean,
     firstLocation : Location,
     stage: Int,
     val blockSet: Set<Block>,
     val weaknessBlockSet: Set<Block>,
     val multiplier: Double,
-    ): Boss(name, hp, time, isEnable, firstLocation, stage) {
+    ): Boss(name, hp, time, isEnabled, firstLocation, stage) {
 
     open override fun summon() {
         // TODO ブロックの設置

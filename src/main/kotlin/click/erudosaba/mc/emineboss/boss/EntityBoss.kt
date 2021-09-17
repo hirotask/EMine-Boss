@@ -9,7 +9,7 @@ open class EntityBoss(
     name: String,
     hp: Int,
     time: Int,
-    isEnable: Boolean,
+    isEnabled: Boolean,
     firstLocation : Location,
     stage: Int,
     val type: EntityType,
@@ -18,7 +18,7 @@ open class EntityBoss(
     val chest: ItemStack,
     val leggings: ItemStack,
     val boots: ItemStack
-    ): Boss(name, hp, time, isEnable, firstLocation, stage) {
+    ): Boss(name, hp, time, isEnabled, firstLocation, stage) {
 
     var entity: Entity? = null
 

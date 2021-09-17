@@ -6,7 +6,7 @@ open class Boss(
     val name: String,
     var hp: Int,
     var time: Int,
-    var isEnable: Boolean,
+    var isEnabled: Boolean,
     var firstLocation : Location,
     val stage: Int
     ) {

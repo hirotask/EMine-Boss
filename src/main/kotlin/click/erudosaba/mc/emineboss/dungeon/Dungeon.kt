@@ -9,7 +9,7 @@ open class Dungeon(
     val people: Int,
     val stageFirstLocations : List<Location>,
     val maxStage: Int,
-    var isEnable: Boolean,
+    var isEnabled: Boolean,
     val bosses : List<Boss>
     ) {
 }
