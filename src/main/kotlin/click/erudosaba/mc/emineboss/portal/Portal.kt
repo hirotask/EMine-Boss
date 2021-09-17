@@ -5,8 +5,7 @@ import org.bukkit.Location
 
 class Portal(val loc1: Location, val loc2: Location, val dungeon: Dungeon) {
 
-    val isEnable: Boolean
-        get() = dungeon.isEnabled
+    val isEnable: Boolean = dungeon.isEnabled
 
     val hologram: Hologram = Hologram(this)
 }
