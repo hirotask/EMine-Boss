@@ -51,6 +51,7 @@ class DungeonManager(val plugin : Main) {
             //ここまで
 
             //ボスのロード　ここから
+            val bossesInDungeon = mutableListOf<Boss>()
             val bossSection = config.getConfigurationSection("bosses")
             if(bossSection != null) {
                 for(boss in bossSection.getKeys(false)) {
@@ -64,12 +65,14 @@ class DungeonManager(val plugin : Main) {
                     val bossLoc = if(bossLocStrs.size == 3) Location(null,bossLocStrs[0].toDouble(),bossLocStrs[1].toDouble(), bossLocStrs[2].toDouble()) else null
                     val bossStage = config.getInt("${path}stage")
                     val boss = Boss(bossName!!,bossHP, bossTime, bossIsEnabled, bossLoc!!, bossStage)
-                    bosses.add(boss)
+
+                    bossesInDungeon.add(boss)
                 }
+                bosses.addAll(bossesInDungeon)
             }
             //ここまで
 
-            val dungeon = Dungeon(name!!, maxPeople, stageFirstLocations, maxStage, isEnabled, bosses)
+            val dungeon = Dungeon(name!!, maxPeople, stageFirstLocations, maxStage, isEnabled, bossesInDungeon)
             dungeons.add(dungeon)
 
             val portal = Portal(minLoc!!, maxLoc!!, dungeon)
