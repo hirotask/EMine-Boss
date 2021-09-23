@@ -31,7 +31,7 @@ class Hologram(private val portal:Portal) {
         // 無敵化
         entity.isInvulnerable = true
         // TODO 当たり判定の無効化
-        entity
+        entity.setBasePlate(false)
 
         // NameTagの付与
         entity.customName = portal.dungeon.name
@@ -72,8 +72,12 @@ class Hologram(private val portal:Portal) {
     // loc1とloc2を比較して中間を計算するメソッド
     private fun getOneMiddle(loc1: Double, loc2: Double): Double {
         // TODO +0.5するかどうかは調査しなければならない
-        return if (loc1 == loc2) loc1
-        else if (loc1 > loc2) loc1 - loc2
-        else loc2 - loc1
+        if(loc1 == loc2) {
+            return loc1
+        } else if(loc1 > loc2) {
+            return loc1 - loc2
+        } else {
+            return loc2 - loc1
+        }
     }
 }
