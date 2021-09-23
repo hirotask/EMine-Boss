@@ -9,7 +9,7 @@ import java.io.File
 import kotlin.math.min
 
 class DungeonManager(val plugin : Main) {
-
+/*
     val dungeons = mutableListOf<Dungeon>()
     val portals = mutableListOf<Portal>()
     val bosses = mutableListOf<Boss>()
@@ -95,4 +95,6 @@ class DungeonManager(val plugin : Main) {
 
         return null
     }
+    */
+
 }

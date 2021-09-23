@@ -1,5 +1,6 @@
 package click.erudosaba.mc.emineboss
 
+import click.erudosaba.mc.emineboss.boss.bosses.entityboss.TestEntityBoss
 import click.erudosaba.mc.emineboss.dungeon.DungeonManager
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -14,7 +15,7 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         logger.info("Plugin Enabled")
 
-        dungeonManager.loadDungeons()
+
 
 
     }

@@ -2,14 +2,14 @@ package click.erudosaba.mc.emineboss.dungeon
 
 import click.erudosaba.mc.emineboss.boss.Boss
 import click.erudosaba.mc.emineboss.portal.Portal
+import click.erudosaba.mc.emineboss.stage.Stage
 import org.bukkit.Location
 
-open class Dungeon(
+class Dungeon(
     val name: String,
-    val people: Int,
-    val stageFirstLocations : List<Location>,
-    val maxStage: Int,
+    val stages: List<Stage>,
+    var maxPeople : Int,
     var isEnabled: Boolean,
-    val bosses : List<Boss>
+    var interval : Int
     ) {
 }
